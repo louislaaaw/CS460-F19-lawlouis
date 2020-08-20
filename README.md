@@ -1,1 +1,1 @@
-# CS460-F19-lawlouis
+# CS 460 Software Engineering I -- Fall 2019

@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Interpolate from one color to another</h2>
+<p>Put a hex 6 digit</p>
+
+<div class="row">
+    <div class="col-md-6">
+        @using (@Html.BeginForm("Create", "ColorInterpolator", FormMethod.Post))
+        {
+        <div class="form-group">
+            @Html.Label("FirstColor", "First Color")
+            @Html.TextBox("FirstColor", null, new { @class = "form-control", type = "text", placeholder = "#123456" , pattern = "#[A-F0-9]{1,6}" , required = "required"})
+            @Html.Label("FirstColor", "Second Color")
+            @Html.TextBox("SecondColor", null, new { @class = "form-control", type = "text", placeholder = "#ABCDEF", pattern = "#[A-F0-9]{1,6}" , required = "required"})
+            @Html.Label("NumColor", "Number of Color (At least 2)")
+            @Html.TextBox("NumColor", null, new { @class = "form-control", type = "number", placeholder = "2" , min = "2", required = "required"})
+            <button class="btn btn-primary" type="submit">Generate👻</button>
+        </div>
+        }
+    </div>
+    <div class="col-md-6">
+        @if(ViewBag.Success == true)
+        {
+            <table>
+                <tr>
+                    <th>HTML</th>
+                    <th>Color</th>
+                </tr>
+                @foreach(var color in (IEnumerable<System.Drawing.Color>)ViewBag.ColorList)
+                {
+                    <tr>
+                        <td>@System.Drawing.ColorTranslator.ToHtml(color)</td>
+                        <td style="background-color: rgb(@color.R, @color.G, @color.B); width: 100px; height: 20px"></td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
+</div>
+
+

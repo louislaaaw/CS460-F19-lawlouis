@@ -1,0 +1,34 @@
+﻿@model HW7.Models.User
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+    <div class="jumbotron" id="user">
+        <div class="row">
+            <div class="col-lg-3">
+                <img id="image" src="" width="200px" height="200px" />
+            </div>
+            <div class="col-lg-9">
+                <a id="gitlink"><h1 id="name"></h1></a>
+                <div id="username"></div>
+                <div id="email"></div>
+                <div id="company"></div>
+                <div id="location"></div>
+            </div>
+        </div>
+    </div>
+
+<div class="row">
+    <div class="col-md-12" id="repo">
+        <h2>Repositories</h2><br/>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12" id="commit"></div>
+</div>
+
+@section scripts{
+    <script src="~/Scripts/main.js"></script>
+}

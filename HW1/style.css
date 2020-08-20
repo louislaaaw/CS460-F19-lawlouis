@@ -1,0 +1,66 @@
+.mytable{
+    width: 40rem;
+    color: yellow;
+    text-align: center;
+}
+
+footer{
+    background-color: rgb(73, 73, 73);
+    color: white;
+}
+
+.navbar{
+    background-color: rgb(27, 27, 27);
+}
+
+body{
+    color: rgb(255, 255, 255);
+}
+
+.my-col-1{
+    background-color: rgb(43, 43, 43);
+}
+
+.my-col-2{
+    background-color: rgb(31, 31, 31);
+}
+
+.my-col-3{
+    background-color: rgb(22, 22, 22);
+}
+
+.figure-caption{
+    color: white;
+}
+
+.nav-item a{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+.thelaw{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: rgb(255, 238, 0);
+    padding: 6px;
+}
+
+.no-hover:hover{
+    text-decoration: none;
+}
+
+A:hover{
+    color: yellow;
+}
+
+.mypicture{
+    filter: opacity(50%);
+    inline-size: 80%;
+}
+
+.card{
+    color: black;
+    width: 100%;
+    max-width: 30rem;
+    text-align: center;
+}

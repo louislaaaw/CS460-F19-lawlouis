@@ -1,0 +1,62 @@
+﻿@model HW_8.Models.Event
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Event</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Location, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Location, new { htmlAttributes = new { @class = "form-control" , required = true} })
+                @Html.ValidationMessageFor(model => model.Location, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Date, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Date, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Date, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Distance, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.Distance, "100", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.Label("100m")
+                @Html.RadioButtonFor(model => model.Distance, "200", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.Label("200m")
+                @Html.RadioButtonFor(model => model.Distance, "400", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.Label("400m")
+                @Html.RadioButtonFor(model => model.Distance, "800", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.Label("800m")
+                @Html.RadioButtonFor(model => model.Distance, "1600", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.Label("1600m")
+                @Html.RadioButtonFor(model => model.Distance, "3200", new { htmlAttributes = new { @class = "form-control" } })
+                @Html.Label("3200m")
+                @Html.ValidationMessageFor(model => model.Distance, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default">
+            </div>
+        </div>
+    </div>
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
